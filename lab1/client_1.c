@@ -37,7 +37,7 @@ int main(){
     }
     while(1){
         printf("enter a number:\n");
-        scanf("%d %d",&a);
+        scanf("%d",&a);
 
         send(sock,&a,sizeof(a),0);
         recv(sock,&c,sizeof(c),0);
