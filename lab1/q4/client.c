@@ -58,7 +58,7 @@ int main(){
         char resmesg[50];
         recv(sock,resmesg,sizeof(resmesg),0);
         printf("\n");
-        printf("&s\n",resmesg);
+        printf("%s\n",resmesg);
         scanf("%s",ch1);
         //printf("%s\n",ch1);
         //printf("%s\n",ch);
