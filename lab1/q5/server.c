@@ -60,7 +60,7 @@ int main(){
         send(csock,&sub,sizeof(sub),0);
         send(csock,&mul,sizeof(mul),0);
         send(csock,&divs,sizeof(divs),0);
-        printf("\nsent sum =: %f\n",sum);
+        printf("\nsent sum =: %f\n",add);
         printf("\nsent difference =: %f\n",sub);
         printf("\nsent product =: %f\n",mul);
         printf("\nsent division =: %f\n",divs);
