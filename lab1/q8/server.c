@@ -13,7 +13,7 @@ struct stud{
 	int ID;
 
 };
-void main(){
+int main(){
 
 int ssock,csock;       // creating server and clinet socket discriptor
 int a,i;

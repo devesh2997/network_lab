@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 
-void main(){
+int main(){
 int sock;      // client socket discriptor
 unsigned int len;
 

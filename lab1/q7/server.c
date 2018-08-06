@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-void main(){
+int main(){
 
 int ssock,csock;       // creating server and clinet socket discriptor
 int a,b,i;

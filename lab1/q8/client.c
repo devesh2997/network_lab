@@ -13,7 +13,7 @@ struct stud{
 	int ID;
 
 };
-void main(){
+int main(){
 int sock;      // client socket discriptor
 int a,b,c,d,e,f,g,i;char q;
 unsigned int len;
