@@ -58,7 +58,7 @@ int main(){
     while(1){
 
         recv(csock,&a,sizeof(a),0);
-        c=fact(a); 
+        c=grade(a); 
         send(csock,&c,sizeof(c),0);            // sending data to client...	
         printf("\nsent grade =: %c\n",c);
     }
