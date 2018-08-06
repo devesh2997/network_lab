@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-char* matchPassword(char *pass, int n){
+bool matchPassword(char *pass, int n){
     char validpass[] =  "testpassword";
     for(int i=0;i<n;i++){
         if(pass[i]!=validpass[i])return false;
