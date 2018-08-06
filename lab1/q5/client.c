@@ -13,7 +13,7 @@
 int main(){
     int sock;      // client socket discriptor
     int a,b,c,i;
-    double add,sub,mul,divs;
+    double sum,sub,mul,divs;
     unsigned int len;
     char ch[3]="no";
     char ch1[3];
@@ -42,7 +42,7 @@ int main(){
         scanf("%d",&b);
         send(sock,&a,sizeof(a),0);
         send(sock,&b,sizeof(b),0);
-        recv(sock,&add,sizeof(add),0);
+        recv(sock,&sum,sizeof(sum),0);
         recv(sock,&sub,sizeof(sub),0);
         recv(sock,&mul,sizeof(mul),0);
         recv(sock,&divs,sizeof(divs),0);
