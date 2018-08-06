@@ -36,7 +36,7 @@ exit(-1);
 }
 while(1){int flag,a;flag=0;int se[5],re[5];
 printf("enter numbers in sequence to return complimentary value : \n");
-for(int i=0;i<5;i++)
+for(i=0;i<5;i++)
 {
 	scanf("%d",&se[i]);
 	send(sock,&se[i],sizeof(se[i]),0);
