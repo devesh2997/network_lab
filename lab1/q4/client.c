@@ -48,8 +48,8 @@ int main(){
         }
 
         send(sock,pass,sizeof(pass),0);
-        send(sock,count,sizeof(count),0);
-        recv(sock,res,sizeof(res),0);
+        send(sock,&count,sizeof(count),0);
+        recv(sock,&res,sizeof(res),0);
         if(res)printf("Authenticated\n");
         else printf("Wrong password");
 
