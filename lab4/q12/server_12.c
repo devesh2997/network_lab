@@ -52,6 +52,8 @@ void solve(char q[150], char *ans){
         if(compare(q,ques)==1){
 			printf("here\n");
 			ans = a;
+			printf("%s\n",ans);
+			printf("%s\n",a);
 			return;
 		}
     }
@@ -97,6 +99,7 @@ int main(){
 
 		char *ans;
 		solve(q,ans);
+		printf("%s\n",ans);
 		send(csock,&ans,sizeof(ans),0);
 	}
 }
