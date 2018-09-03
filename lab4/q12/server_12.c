@@ -9,20 +9,20 @@
 #include <unistd.h>
 #include <math.h>
 
-bool compare(char *a, char *b){
-	if(a== NULL && b==NULL)return true;
-	if(a == NULL)return false;
-	if(b==NULL)return false;
+int compare(char *a, char *b){
+	if(a== NULL && b==NULL)return 1;
+	if(a == NULL)return 0;
+	if(b==NULL)return 0;
 
-	if(*a== '\0' && *b=='\0')return true;
-	if(*a == '\0')return false;
-	if(*b=='\0')return false;
+	if(*a== '\0' && *b=='\0')return 1;
+	if(*a == '\0')return 0;
+	if(*b=='\0')return 0;
 
-	bool flag = true;
+	bool flag = 1;
 
 	while(*a!='\0' && *b!='\0'){
 		if(*a != *b){
-			flag = false;
+			flag = 0;
 			printf("%c - %c",*a,*b);
 			break;
 		}
@@ -30,8 +30,8 @@ bool compare(char *a, char *b){
 		b++;
 	}	
 
-	if(a=='\0' && b!='\0')flag = false;
-	if(b=='\0' && a!='\0')flag = false;
+	if(a=='\0' && b!='\0')flag = 0;
+	if(b=='\0' && a!='\0')flag = 0;
 	return flag;
 }
 
@@ -49,7 +49,7 @@ void solve(char q[150], char *ans){
 		printf("%s - %s",q,ques);
 		int i = strcmp(q,ques);
 		printf("%d\n",i);
-        if(compare(q,ques)){
+        if(compare(q,ques)==1){
 			printf("here\n");
 			ans = a;
 			return;
