@@ -21,6 +21,7 @@ void solve(char q[150], char *ans){
 	while (fgets(ques, sizeof(ques), fp)) {
         printf("%s\n",ques);
     }
+	return;
 	// for(int i=0;i<4;i+=2){
 	// 	printf("%d\n",i);
 	// 	fgets(fp,"%s",ques);
@@ -33,9 +34,9 @@ void solve(char q[150], char *ans){
 	// 	}
 	// }
 
-	fclose(fp);
-	char error[150] = "Try again";
-	ans = error;
+	// fclose(fp);
+	// char error[150] = "Try again";
+	// ans = error;
 }
 
 int main(){
@@ -77,7 +78,7 @@ int main(){
 
 		char *ans;
 		solve(q,ans);
-		printf("%s\n",ans);
+		//printf("%s\n",ans);
 		send(csock,&ans,sizeof(ans),0);
 	}
 }
