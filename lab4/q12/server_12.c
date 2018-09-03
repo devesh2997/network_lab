@@ -102,6 +102,6 @@ int main(){
 		char *res;
 		res = solve(q,ans);
 		if(res!=NULL)printf("%s\n",res);
-		send(csock,&ans,sizeof(ans),0);
+		send(csock,ans,sizeof(res),0);
 	}
 }
