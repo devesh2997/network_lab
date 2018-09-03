@@ -38,7 +38,7 @@ int main(){
 		printf("Enter a question:\n");
 		gets(q);
 		send(sock,&q,sizeof(q),0);
-		char *res;
+		char res[150];
 		recv(sock,res,sizeof(res),0);
 		if(res!=NULL)printf("%s\n",res);
 		else printf("Try again\n");

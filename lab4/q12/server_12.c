@@ -35,7 +35,7 @@ int compare(char *a, char *b){
 	return flag;
 }
 
-char *ans;
+char ans[150];
 
 void solve(char q[150]){
 	FILE * fp; 
@@ -53,7 +53,7 @@ void solve(char q[150]){
 		printf("%d\n",i);
         if(compare(q,ques)==1){
 			printf("here\n");
-			ans = a;
+			*ans = a;
 			printf("%s\n",ans);
 			printf("%s\n",a);
 			return;
