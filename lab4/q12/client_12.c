@@ -36,7 +36,7 @@ int main(){
 	n=3;
 	while(n--){
 		printf("Enter a question:\n");
-		scanf("%s",q);
+		gets(q);
 		send(sock,&q,sizeof(q),0);
 		char res[150];
 		recv(sock,&res,sizeof(res),0);
