@@ -35,7 +35,9 @@ int compare(char *a, char *b){
 	return flag;
 }
 
-char* solve(char q[150], char *ans){
+char *ans;
+
+void solve(char q[150]){
 	FILE * fp; 
 	fp = fopen("database.txt", "r");
 	if (fp == NULL){
@@ -54,11 +56,10 @@ char* solve(char q[150], char *ans){
 			ans = a;
 			printf("%s\n",ans);
 			printf("%s\n",a);
-			return a;
+			return;
 		}
     }
 	printf("wtf\n");
-	return NULL;
 }
 
 int main(){
@@ -97,11 +98,8 @@ int main(){
 	char q[150];
 	while(1){
 		recv(csock,&q,sizeof(q),0);
-
-		char *ans;
-		char *res;
-		res = solve(q,ans);
-		if(res!=NULL)printf("%s\n",res);
-		send(csock,ans,sizeof(res),0);
+		solve(q);
+		printf("%s\n",ans);
+		send(csock,&ans,sizeof(ans),0);
 	}
 }
