@@ -11,7 +11,7 @@
 
 char* solve(char q[150]){
 	FILE * fp; 
-	fp = fopen(database.txt”, “r”);
+	fp = fopen("database.txt”, “r”);
 	char ques[150];
 	char ans[150];
 	for(int i=0;i<4;i+=2){
