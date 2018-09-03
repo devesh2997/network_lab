@@ -9,21 +9,22 @@
 #include <unistd.h>
 #include <math.h>
 
-char* solve(char q[150]){
+void solve(char q[150], char *ans){
 	FILE * fp; 
 	fp = fopen("database.txt", "r");
 	char ques[150];
-	char ans[150];
+	char *a;
 	for(int i=0;i<4;i+=2){
 		fgets(fp,"%s",ques);
-		fgets(fp,"%s",ans);
+		fgets(fp,"%s",a);
 		if(strcmp(q,ques)){
-			return ans;
+			ans = a;
+			break;
 		}
 	}
 
 	char error[150] = "Try again";
-	return error;
+	ans = error;
 }
 
 int main(){
@@ -64,7 +65,7 @@ int main(){
 		recv(csock,&q,sizeof(q),0);
 
 		char *ans;
-		ans= solve(q);
+		solve(q,ans);
 		send(csock,&ans,sizeof(ans),0);
 	}
 }
