@@ -17,26 +17,14 @@ void solve(char q[150], char *ans){
 		return;
 	}
 	char ques[150];
-	char *a;
+	char a[150];
 	while (fgets(ques, sizeof(ques), fp)) {
-        printf("%s\n",ques);
+		fgets(a, sizeof(a), fp);
+        if(strcmp(q,ques)){
+			ans = a;
+			return;
+		}
     }
-	return;
-	// for(int i=0;i<4;i+=2){
-	// 	printf("%d\n",i);
-	// 	fgets(fp,"%s",ques);
-	// 	fgets(fp,"%s",a);
-	// 	printf("%s\n",ques);
-	// 	printf("%s\n",a);
-	// 	if(strcmp(q,ques)){
-	// 		ans = a;
-	// 		return;
-	// 	}
-	// }
-
-	// fclose(fp);
-	// char error[150] = "Try again";
-	// ans = error;
 }
 
 int main(){
@@ -78,7 +66,6 @@ int main(){
 
 		char *ans;
 		solve(q,ans);
-		//printf("%s\n",ans);
 		send(csock,&ans,sizeof(ans),0);
 	}
 }
