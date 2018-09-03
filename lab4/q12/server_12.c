@@ -21,6 +21,8 @@ void solve(char q[150], char *ans){
 	while (fgets(ques, sizeof(ques), fp)) {
 		fgets(a, sizeof(a), fp);
 		printf("%s - %s",q,ques);
+		int i = strcmp(q,ques);
+		printf("%d\n",i);
         if(strcmp(q,ques)==0){
 			printf("here\n");
 			ans = a;
