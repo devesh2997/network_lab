@@ -15,11 +15,11 @@ void solve(char q[150], char *ans){
 	char ques[150];
 	char *a;
 	for(int i=0;i<4;i+=2){
-		cout<<i<<endl;
+		printf("%d\n",i);
 		fgets(fp,"%s",ques);
 		fgets(fp,"%s",a);
-		cout<<ques<<endl;
-		cout<<ans<<endl;
+		printf("%s\n",ques);
+		printf("%s\n",a);
 		if(strcmp(q,ques)){
 			ans = a;
 			break;
@@ -69,7 +69,7 @@ int main(){
 
 		char *ans;
 		solve(q,ans);
-		cout<<ans<<endl;
+		printf("%s\n",ans);
 		send(csock,&ans,sizeof(ans),0);
 	}
 }
