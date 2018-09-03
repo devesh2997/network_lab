@@ -18,7 +18,7 @@ int compare(char *a, char *b){
 	if(*a == '\0')return 0;
 	if(*b=='\0')return 0;
 
-	bool flag = 1;
+	int flag = 1;
 
 	while(*a!='\0' && *b!='\0'){
 		if(*a != *b){
