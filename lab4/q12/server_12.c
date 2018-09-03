@@ -12,7 +12,11 @@
 void solve(char q[150], char *ans){
 	FILE * fp; 
 	fp = fopen("database.txt", "r");
-	char ques[150];
+	if (fp == NULL){
+		printf("Error in reading file\n");
+		return;
+	}
+	char *ques;
 	char *a;
 	for(int i=0;i<4;i+=2){
 		printf("%d\n",i);
@@ -22,10 +26,11 @@ void solve(char q[150], char *ans){
 		printf("%s\n",a);
 		if(strcmp(q,ques)){
 			ans = a;
-			break;
+			return;
 		}
 	}
 
+	fclose(fp);
 	char error[150] = "Try again";
 	ans = error;
 }
