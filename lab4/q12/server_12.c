@@ -16,19 +16,22 @@ void solve(char q[150], char *ans){
 		printf("Error in reading file\n");
 		return;
 	}
-	char *ques;
+	char ques[150];
 	char *a;
-	for(int i=0;i<4;i+=2){
-		printf("%d\n",i);
-		fgets(fp,"%s",ques);
-		fgets(fp,"%s",a);
-		printf("%s\n",ques);
-		printf("%s\n",a);
-		if(strcmp(q,ques)){
-			ans = a;
-			return;
-		}
-	}
+	while (fgets(ques, sizeof(ques), fp)) {
+        printf("%s\n",ques);
+    }
+	// for(int i=0;i<4;i+=2){
+	// 	printf("%d\n",i);
+	// 	fgets(fp,"%s",ques);
+	// 	fgets(fp,"%s",a);
+	// 	printf("%s\n",ques);
+	// 	printf("%s\n",a);
+	// 	if(strcmp(q,ques)){
+	// 		ans = a;
+	// 		return;
+	// 	}
+	// }
 
 	fclose(fp);
 	char error[150] = "Try again";
