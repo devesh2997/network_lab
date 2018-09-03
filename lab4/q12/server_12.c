@@ -100,6 +100,6 @@ int main(){
 		recv(csock,&q,sizeof(q),0);
 		solve(q);
 		printf("%s\n",ans);
-		send(csock,&ans,sizeof(ans),0);
+		send(csock,ans,sizeof(ans),0);
 	}
 }
