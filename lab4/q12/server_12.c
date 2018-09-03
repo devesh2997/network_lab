@@ -9,6 +9,32 @@
 #include <unistd.h>
 #include <math.h>
 
+bool compare(char *a, char *b){
+	if(a== NULL && b==NULL)return true;
+	if(a == NULL)return false;
+	if(b==NULL)return false;
+
+	if(*a== '\0' && *b=='\0')return true;
+	if(*a == '\0')return false;
+	if(*b=='\0')return false;
+
+	bool flag = true;
+
+	while(*a!='\0' && *b!='\0'){
+		if(*a != *b){
+			flag = false;
+			printf("%c - %c",*a,*b);
+			break;
+		}
+		a++;
+		b++;
+	}	
+
+	if(a=='\0' && b!='\0')flag = false;
+	if(b=='\0' && a!='\0')flag = false;
+	return flag;
+}
+
 void solve(char q[150], char *ans){
 	FILE * fp; 
 	fp = fopen("database.txt", "r");
@@ -23,7 +49,7 @@ void solve(char q[150], char *ans){
 		printf("%s - %s",q,ques);
 		int i = strcmp(q,ques);
 		printf("%d\n",i);
-        if(strcmp(q,ques)==0){
+        if(compare(q,ques)){
 			printf("here\n");
 			ans = a;
 			return;
